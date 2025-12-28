@@ -1,5 +1,9 @@
 package com.example.newsapp.presentation.onboarding
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.AnimationSpec
+import androidx.compose.animation.core.FastOutLinearInEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -84,7 +88,8 @@ fun OnboardingScreen() {
                                 //Navigate to the main screen and save a value in datastore preferences
                             }else{
                                 pagerState.animateScrollToPage(
-                                    page = pagerState.currentPage + 1
+                                    page = pagerState.currentPage + 1,
+//                                    animationSpec = tween(durationMillis = 1000, easing = FastOutLinearInEasing)
                                 )
                             }
                         }
